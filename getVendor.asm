@@ -4,10 +4,10 @@ _start:
 mov eax,0 ;EAX=0: Get vendor ID
 cpuid ;getting the cpu vendor
 mov ebp,esp
-sub esp,16
+sub esp,13
 mov [esp],ebx
 mov [esp+4],edx
-mov [esp+8],ecx
+mov [esp+8],ecx ; esp+8 is full untill esp+12
 mov [esp+12],byte 0xa;new line
 mov eax,4 ;sys_write system call
 mov ebx,1 ;stdout file descriptor
